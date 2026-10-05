@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern block typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. Header (Navbar) -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="white_text">Habit</span><span class="orange_text">Tracker</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#goals">Daily Goals</a></li>
+                <li><a href="#ideal-day">Ideal Day</a></li>
+                <li><a href="#faqs" class="nav-btn">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2, 3 & 4. Initial Screen View (Hero Section - 100vh full screen) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">HABIT TRACKER</h1>
+            <p class="hero-subtitle">Start tracking your day</p>
+            <!-- Inside index.html hero section -->
+            <button id="addHabitBtn" class="primary-btn" onclick="window.location.href='home.html'">
+                <span>+</span> Add Habits
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll down to explore</span>
+            <div class="arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- 5. Content Visible Upon Scrolling -->
+    <main>
+        <!-- How to Set Your Daily Goals -->
+        <section id="goals" class="content-section">
+            <div class="container">
+                <span class="badge">Guide</span>
+                <h2 class="section-title">How to Set Your <span class="orange_text">Daily Goals</span></h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h3>Start Micro-Small</h3>
+                        <p>Focus on tiny, consistent wins rather than overwhelming targets. Action creates momentum.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h3>Be Specific & Time-Bound</h3>
+                        <p>Attach habits to specific triggers (e.g., "Read for 10 minutes right after morning coffee").</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h3>Track Daily Consistency</h3>
+                        <p>Never miss two days in a row. Consistency beats intensity every single time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is an Ideal Day? -->
+        <section id="ideal-day" class="content-section alt-bg">
+            <div class="container">
+                <span class="badge">Concept</span>
+                <h2 class="section-title">What is an <span class="orange_text">Ideal Day?</span></h2>
+                <p class="section-description">
+                    An ideal day isn't about perfection or executing every minute flawlessly—it is about intentional action, energy management, and self-alignment.
+                </p>
+                <div class="ideal-day-box">
+                    <div class="timeline-item">
+                        <span class="time-tag">Morning</span>
+                        <h4>Intentional Start</h4>
+                        <p>Clear mind, hydrations, no immediate screen distractions, and setting top 3 priorities.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time-tag">Afternoon</span>
+                        <h4>Deep Focused Execution</h4>
+                        <p>Dedicated uninterrupted blocks for primary habits, skill building, and high-value work.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time-tag">Evening</span>
+                        <h4>Reflection & Recovery</h4>
+                        <p>Reviewing habit achievements, winding down screens early, and recharging for tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="content-section">
+            <div class="container">
+                <span class="badge">Support</span>
+                <h2 class="section-title">Frequently Asked <span class="orange_text">Questions</span></h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How many habits should I start tracking at once?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We recommend starting with 2 to 3 core habits. Once these become second nature after 3-4 weeks, you can gradually add more.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What happens if I miss a day in my tracker?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Don't panic! Missing one day has almost no impact on long-term habit building. The key rule is: <strong>never miss twice in a row</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why is daily habit tracking effective?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Habit tracking provides visual proof of your hard work, holds you accountable, and triggers dopamine bursts that reinforce positive behavior loops.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does it take to form a permanent habit?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>On average, it takes 21 to 66 days depending on the complexity of the habit and individual consistency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Habit Tracker. Designed for high performers.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker - Dashboard</title>
+    <!-- Single CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+            
+            <!-- VIEW 1: STOPWATCH -->
+            <section id="view-stopwatch" class="view-section">
+                <div class="view-header">
+                    <h2>Stopwatch</h2>
+                    <p>Track deep focus sessions & habit durations</p>
+                </div>
+                <div class="stopwatch-container">
+                    <div class="timer-display" id="timerDisplay">00:00:00</div>
+                    <div class="stopwatch-controls">
+                        <button id="startStopBtn" class="action-btn start">Start</button>
+                        <button id="resetTimerBtn" class="action-btn secondary">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 2: DAILY TASKS (Default View) -->
+            <section id="view-daily" class="view-section active">
+                
+                <!-- TOP HEADER: DATE SELECTOR -->
+                <div class="date-header-wrapper">
+                    <button class="date-nav-btn" id="prevDateBtn">&larr;</button>
+                    <div class="date-strip" id="dateStrip">
+                        <!-- Dates generated dynamically via JS -->
+                    </div>
+                    <button class="date-nav-btn" id="nextDateBtn">&rarr;</button>
+                </div>
+
+                <div class="current-date-title">
+                    <h3 id="selectedDateText">Today</h3>
+                </div>
+
+                <!-- TASK CONTAINER -->
+                <div id="tasksContainer" class="tasks-container">
+                    <!-- Rendered by JS -->
+                </div>
+            </section>
+
+            <!-- VIEW 3: MONTHLY CALENDAR -->
+            <section id="view-calendar" class="view-section">
+                <div class="calendar-header">
+                    <button class="cal-nav-btn" id="prevMonthBtn">&lt;</button>
+                    <h2 id="calendarMonthYear">Month Year</h2>
+                    <button class="cal-nav-btn" id="nextMonthBtn">&gt;</button>
+                </div>
+
+                <div class="calendar-days-header">
+                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Generated via JS -->
+                </div>
+            </section>
+
+            <!-- VIEW 4: YEARLY REPORT -->
+            <section id="view-report" class="view-section">
+                <div class="view-header">
+                    <h2>Yearly Progress Report</h2>
+                    <p>Overview of your habits and performance over time</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" id="totalHabitsStat">0</span>
+                        <span class="stat-label">Total Tasks Created</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="completedHabitsStat">0</span>
+                        <span class="stat-label">Tasks Completed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="completionRateStat">0%</span>
+                        <span class="stat-label">Completion Rate</span>
+                    </div>
+                </div>
+
+                <div class="report-chart-box">
+                    <h3>Monthly Completion Summary</h3>
+                    <div class="bar-chart" id="barChart">
+                        <!-- Bars dynamically rendered -->
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR (4 ICON BUTTONS) -->
+        <aside class="right-sidebar">
+            <div class="brand-mini">
+                <a href="index.html" title="Go to Home">
+                    <span class="white_text">H</span><span class="orange_text">T</span>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- 1. Stopwatch -->
+                <button class="nav-icon-btn" data-view="view-stopwatch" title="Stopwatch">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="13" r="8"></circle>
+                        <path d="M12 9v4l2 2"></path>
+                        <path d="M12 2v3M10 2h4"></path>
+                    </svg>
+                    <span class="tooltip">Stopwatch</span>
+                </button>
+
+                <!-- 2. Daily Tasks -->
+                <button class="nav-icon-btn active" data-view="view-daily" title="Daily Tasks">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    <span class="tooltip">Daily Tasks</span>
+                </button>
+
+                <!-- 3. Monthly Calendar -->
+                <button class="nav-icon-btn" data-view="view-calendar" title="Monthly Calendar">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span class="tooltip">Calendar</span>
+                </button>
+
+                <!-- 4. Yearly Report -->
+                <button class="nav-icon-btn" data-view="view-report" title="Yearly Report">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span class="tooltip">Yearly Report</span>
+                </button>
+            </nav>
+        </aside>
+
+    </div>
+
+    <!-- MODAL FOR ADDING TASK -->
+    <div class="modal-overlay" id="taskModal">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <input type="text" id="taskInput" placeholder="Enter task title..." autofocus />
+            <div class="modal-actions">
+                <button class="action-btn secondary" id="cancelTaskBtn">Cancel</button>
+                <button class="action-btn primary" id="saveTaskBtn">Save Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Single JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
